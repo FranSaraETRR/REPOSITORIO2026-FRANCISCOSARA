@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+typedef struct {
+    int edad;
+    char iniciales[5];
+    char sangre[5];
+    float altura;
+} Paciente;
+
+int main() {
+    Paciente paciente;
+    int opcion = 0;
+
+    printf("Ingrese la edad: ");
+    scanf("%d", &paciente.edad);
+
+    printf("Ingrese las iniciales: ");
+    scanf("%s", paciente.iniciales);
+
+    printf("Ingrese el tipo de sangre: ");
+    scanf("%s", paciente.sangre);
+
+    printf("Ingrese la altura: ");
+    scanf("%f", &paciente.altura);
+
+    while(opcion != 5) {
+
+        printf("\n1- Mostrar edad\n");
+        printf("2- Mostrar iniciales\n");
+        printf("3- Mostrar tipo de sangre\n");
+        printf("4- Mostrar altura\n");
+        printf("5- Salir\n");
+        printf("Opcion: ");
+        scanf("%d", &opcion);
+
+        if(opcion == 1) {
+            printf("Edad: %d\n", paciente.edad);
+        }
+
+        if(opcion == 2) {
+            printf("Iniciales: %s\n", paciente.iniciales);
+        }
+
+        if(opcion == 3) {
+            printf("Tipo de sangre: %s\n", paciente.sangre);
+        }
+
+        if(opcion == 4) {
+            printf("Altura: %.2f\n", paciente.altura);
+        }
+    }
+
+    return 0;
+}
