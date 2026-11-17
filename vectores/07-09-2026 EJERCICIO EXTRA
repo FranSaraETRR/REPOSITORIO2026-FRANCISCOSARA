@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-// Funcion para ordenar de mayor a menor
 void ordenar(int vector[]) {
     int x, y, aux;
 
@@ -10,13 +9,12 @@ void ordenar(int vector[]) {
             if (vector[x] < vector[y]) {
                 aux = vector[x];
                 vector[x] = vector[y];
-                vector[y] = aux;
+                vector[y] = temporal;
             }
         }
     }
 }
 
-// Funcion para sumar y calcular el promedio
 void promedio(int vector[]) {
     int x;
     int suma = 0;
@@ -36,23 +34,19 @@ int main() {
     int vector[10];
     int x;
 
-    // Ingresar los datos
     for (x = 0; x < 10; x++) {
         printf("Ingrese el dato %d: ", x + 1);
         scanf("%d", &vector[x]);
     }
 
-    // Ordenar el vector
     ordenar(vector);
 
-    // Mostrar el vector ordenado
     printf("\nVector ordenado de mayor a menor:\n");
 
     for (x = 0; x < 10; x++) {
         printf("%d\n", vector[x]);
     }
 
-    // Calcular suma y promedio
     promedio(vector);
 
     return 0;
